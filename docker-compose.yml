@@ -1,8 +1,8 @@
-version: '3.4'
-
+version: "3.9"
 services:
-  telegrambot:
-    image: telegrambot
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  chatbot:
+    build: .
+    image: npatashkevich/docker-telegram-bot-sample:local
+    restart: unless-stopped
+    env_file:
+      - .env
